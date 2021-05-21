@@ -77,175 +77,174 @@ function init() {
         createTeam();
       });
   }
-}
 
-// Start inputting rest of team
+  // Start inputting rest of team
 
-function createTeam() {
-  inquirer
-    .prompt([
-      {
-        type: "list",
-        message: "What is the next Employee's Role?",
-        choices: ["Engineer", "Intern", "No More Team Members"],
-        name: "employeeType",
-      },
-    ])
-    .then((selectedEmployee) => {
-      switch (selectedEmployee.employeeType) {
-        case "Engineer":
-          addEngineer();
-          break;
-        case "Intern":
-          addIntern();
-          break;
-        default:
-          selectTeam();
-      }
+  function createTeam() {
+    inquirer
+      .prompt([
+        {
+          type: "list",
+          message: "What is the next Employee's Role?",
+          choices: ["Engineer", "Intern", "No More Team Members"],
+          name: "employeeType",
+        },
+      ])
+      .then((selectedEmployee) => {
+        switch (selectedEmployee.employeeType) {
+          case "Engineer":
+            addEngineer();
+            break;
+          case "Intern":
+            addIntern();
+            break;
+          default:
+            createCards();
+        }
+      });
+  }
+
+  // Input Engineer/Intern
+
+  function addEngineer() {
+    inquirer
+      .prompt([
+        {
+          type: "input",
+          message: "Engineers Name:",
+          name: "engineerName",
+          validate: (value) => {
+            if (value) {
+              return true;
+            } else {
+              return "Input a response to continue.";
+            }
+          },
+        },
+        {
+          type: "input",
+          message: "Engineers Id:",
+          name: "engineerId",
+          validate: (value) => {
+            if (value) {
+              return true;
+            } else {
+              return "Input a response to continue.";
+            }
+          },
+        },
+        {
+          type: "input",
+          message: "What is the Engineers Email Address?",
+          name: "engineerEmail",
+          validate: (value) => {
+            if (value) {
+              return true;
+            } else {
+              return "Input a response to continue.";
+            }
+          },
+        },
+        {
+          type: "input",
+          message: "What is the Engineers GitHub Username?",
+          name: "engineerGithub",
+          validate: (value) => {
+            if (value) {
+              return true;
+            } else {
+              return "Input a response to continue.";
+            }
+          },
+        },
+      ])
+      .then((answers) => {
+        const engineer = new Engineer(
+          answers.engineerName,
+          answers.engineerId,
+          answers.engineerEmail,
+          answers.engineerGithub
+        );
+        teamList.push(engineer);
+        employeeId.push(answers.engineerId);
+        createTeam();
+      });
+  }
+
+  // Intern Information
+  function addIntern() {
+    inquirer
+      .prompt([
+        {
+          type: "input",
+          message: "Interns Name:",
+          name: "internName",
+          validate: (value) => {
+            if (value) {
+              return true;
+            } else {
+              return "Input a response to continue.";
+            }
+          },
+        },
+        {
+          type: "input",
+          message: "Interns Id:",
+          name: "internId",
+          validate: (value) => {
+            if (value) {
+              return true;
+            } else {
+              return "Input a response to continue.";
+            }
+          },
+        },
+        {
+          type: "input",
+          message: "What is the Interns Email Address?",
+          name: "internEmail",
+          validate: (value) => {
+            if (value) {
+              return true;
+            } else {
+              return "Input a response to continue.";
+            }
+          },
+        },
+        {
+          type: "input",
+          message: "What School did the Intern Attend?",
+          name: "internSchool",
+          validate: (value) => {
+            if (value) {
+              return true;
+            } else {
+              return "Input a response to continue.";
+            }
+          },
+        },
+      ])
+      .then((answers) => {
+        const intern = new Intern(
+          answers.internName,
+          answers.internId,
+          answers.internEmail,
+          answers.internSchool
+        );
+        teamList.push(intern);
+        employeeId.push(answers.internId);
+        createTeam();
+      });
+  }
+
+  function createCards() {
+    let teamCards = "";
+
+    teamList.forEach((item) => {
+      let teamCreation = item.createCard();
+      teamCards += teamCreation;
     });
-}
-
-// Input Engineer/Intern
-
-function addEngineer() {
-  inquirer
-    .prompt([
-      {
-        type: "input",
-        message: "Engineers Name:",
-        name: "engineerName",
-        validate: (value) => {
-          if (value) {
-            return true;
-          } else {
-            return "Input a response to continue.";
-          }
-        },
-      },
-      {
-        type: "input",
-        message: "Engineers Id:",
-        name: "engineerId",
-        validate: (value) => {
-          if (value) {
-            return true;
-          } else {
-            return "Input a response to continue.";
-          }
-        },
-      },
-      {
-        type: "input",
-        message: "What is the Engineers Email Address?",
-        name: "engineerEmail",
-        validate: (value) => {
-          if (value) {
-            return true;
-          } else {
-            return "Input a response to continue.";
-          }
-        },
-      },
-      {
-        type: "input",
-        message: "What is the Engineers GitHub Username?",
-        name: "engineerGithub",
-        validate: (value) => {
-          if (value) {
-            return true;
-          } else {
-            return "Input a response to continue.";
-          }
-        },
-      },
-    ])
-    .then((answers) => {
-      const engineer = new Engineer(
-        answers.engineerName,
-        answers.engineerId,
-        answers.engineerEmail,
-        answers.engineerGithub
-      );
-      teamList.push(engineer);
-      employeeId.push(answers.engineerId);
-      createTeam();
-    });
-}
-
-// Intern Information
-function addIntern() {
-  inquirer
-    .prompt([
-      {
-        type: "input",
-        message: "Interns Name:",
-        name: "internName",
-        validate: (value) => {
-          if (value) {
-            return true;
-          } else {
-            return "Input a response to continue.";
-          }
-        },
-      },
-      {
-        type: "input",
-        message: "Interns Id:",
-        name: "internId",
-        validate: (value) => {
-          if (value) {
-            return true;
-          } else {
-            return "Input a response to continue.";
-          }
-        },
-      },
-      {
-        type: "input",
-        message: "What is the Interns Email Address?",
-        name: "internEmail",
-        validate: (value) => {
-          if (value) {
-            return true;
-          } else {
-            return "Input a response to continue.";
-          }
-        },
-      },
-      {
-        type: "input",
-        message: "What School did the Intern Attend?",
-        name: "internSchool",
-        validate: (value) => {
-          if (value) {
-            return true;
-          } else {
-            return "Input a response to continue.";
-          }
-        },
-      },
-    ])
-    .then((answers) => {
-      const intern = new Intern(
-        answers.internName,
-        answers.internId,
-        answers.internEmail,
-        answers.internSchool
-      );
-      teamList.push(intern);
-      employeeId.push(answers.internId);
-      createTeam();
-    });
-}
-
-function createCards() {
-  let teamCards = "";
-
-  teamList.forEach((item) => {
-    let teamCreation = item.createCard();
-    teamCards += teamCreation;
-  });
-  let draftHTML = `<!DOCTYPE html>
+    let draftHTML = `<!DOCTYPE html>
     <html lang='en'>
         <head>
             <meta charset='UTF-8'>
@@ -261,7 +260,7 @@ function createCards() {
             
             <!-- Begin Cards -->
             <div class='d-flex justify-content-center'>
-                ${allCards}
+                ${teamCards}
             </div>
             <!-- End Cards -->
             <div class='position-relative mt-5 bottom-0 start-50 translate-middle-x'>
@@ -270,4 +269,12 @@ function createCards() {
         </body>
     </html>
     `;
+    fs.writeFile("./dist/generateTeam.html", draftHTML, function (err) {
+      if (err) {
+        return console.log(err);
+      }
+    });
+    managerPrompts();
+  }
 }
+init();
