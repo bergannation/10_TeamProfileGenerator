@@ -4,12 +4,11 @@ const fs = require("fs");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
-const Employee = require("./lib/Employee");
 
-const teamList = [];
+const teamArray = [];
 const employeeId = [];
 
-// Manager inputs
+// Start of node & Manager inputs
 
 function init() {
   function managerPrompts() {
@@ -72,7 +71,7 @@ function init() {
           answers.managerEmail,
           answers.managerNumber
         );
-        teamList.push(manager);
+        teamArray.push(manager);
         employeeId.push(answers.managerId);
         createTeam();
       });
@@ -99,7 +98,7 @@ function init() {
             addIntern();
             break;
           default:
-            createCards();
+            generateCards();
         }
       });
   }
@@ -165,7 +164,7 @@ function init() {
           answers.engineerEmail,
           answers.engineerGithub
         );
-        teamList.push(engineer);
+        teamArray.push(engineer);
         employeeId.push(answers.engineerId);
         createTeam();
       });
@@ -231,16 +230,16 @@ function init() {
           answers.internEmail,
           answers.internSchool
         );
-        teamList.push(intern);
+        teamArray.push(intern);
         employeeId.push(answers.internId);
         createTeam();
       });
   }
 
-  function createCards() {
+  function generateCards() {
     let teamCards = "";
 
-    teamList.forEach((item) => {
+    teamArray.forEach((item) => {
       let teamCreation = item.createCard();
       teamCards += teamCreation;
     });
@@ -274,7 +273,7 @@ function init() {
         return console.log(err);
       }
     });
-    managerPrompts();
   }
+  managerPrompts();
 }
 init();
