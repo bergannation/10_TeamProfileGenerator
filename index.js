@@ -240,7 +240,7 @@ function init() {
     let teamCards = "";
 
     teamArray.forEach((item) => {
-      let teamCreation = item.createCard();
+      let teamCreation = item.getPerson();
       teamCards += teamCreation;
     });
     let draftHTML = `<!DOCTYPE html>
@@ -253,18 +253,18 @@ function init() {
             <title>The 'Bee' Team</title>
         </head>
         <body>
-            <div class='container-fluid bg-warning text-center d-flex align-items-center justify-content-center' style='height: 200px'>
+            <div class='container-fluid bg-success text-center d-flex align-items-center justify-content-center' style='height: 200px'>
                 <h1 class='text-center'>The 'A' Team</h1>
             </div>
-            
+            <div class='d-flex justify-content-center position-relative mt-5 bottom-0 start-50 translate-middle-x'>
+                <img src='../images/ateam.gif' class='img-fluid' alt='A TEAM'>
+            </div>
             <!-- Begin Cards -->
             <div class='d-flex justify-content-center'>
                 ${teamCards}
             </div>
             <!-- End Cards -->
-            <div class='position-relative mt-5 bottom-0 start-50 translate-middle-x'>
-                <img src='../images/ateam.gif' class='img-fluid' alt='A TEAM'>
-            </div>
+            
         </body>
     </html>
     `;
