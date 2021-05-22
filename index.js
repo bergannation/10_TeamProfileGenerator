@@ -251,14 +251,14 @@ function init() {
             <meta name='viewport' content='width=device-width, initial-scale=1.0'>
             <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css' rel='stylesheet'>
             <link rel="stylesheet" href="./Assets/style.css"/>
-            <title>The 'A' Team</title>
+            <title>KVWN Channel 4 News Team</title>
         </head>
         <body>
             <div class='container-fluid bg-success text-center d-flex align-items-center justify-content-center' style='height: 100px'>
-                <h1 class='text-center'>The 'A' Team</h1>
+                <h1 class='text-center'>KVWN Channel 4 News Team</h1>
             </div>
             <div class='d-flex justify-content-center position-relative mt-5 bottom-0 start-50 translate-middle-x'>
-                <img src='../images/ateam.gif' class='img-fluid' alt='A TEAM'>
+                <img src='../images/newsteam.gif' class='img-fluid' alt='A TEAM'>
             </div>
             <!-- Begin Cards -->
             <div class='d-flex justify-content-center'>
