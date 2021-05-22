@@ -88,7 +88,7 @@ node index.js
 
 Once the user has inputted the information he wishes to have for each question, the HTML is generated in the "Dist" folder within the directory. Each employee's input is then rendered into cards for reference.
 
-![alt text](images/capture4.png)
+![alt text](images/capture5.png)
 
 ## Tests
 
