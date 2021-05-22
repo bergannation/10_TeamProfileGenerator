@@ -272,6 +272,10 @@ function init() {
     fs.writeFile("./dist/generateTeam.html", HTML, function (err) {
       if (err) {
         return console.log(err);
+      } else {
+        console.log(
+          "Success! Your file is in the 'Dist' folder of the directory!"
+        );
       }
     });
   }
