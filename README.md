@@ -56,13 +56,13 @@ Below are links to access this live website and repository.
 
 Github: https://github.com/bergannation/10_TeamProfileGenerator
 
-Deployed Video Link: https://drive.google.com/file/d/13vd7-kNTCwLh0pJ38bp2BhJeZuzZuy7k/view
+Deployed Video Link: https://drive.google.com/file/d/1xP9xFwU23vXN4PTUjvANL96xIxvnd4KE/view
 
 ## Mock-Up
 
 The following gif shows the web application's appearance and functionality:
 
-![.](./images/ateam2.gif)
+![.](./images/anchorman.gif)
 
 ## Installation
 
