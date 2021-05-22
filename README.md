@@ -47,7 +47,7 @@ If your README is long, add a table of contents to make it easy for users to fin
 - [Install](#installation)
 - [Usage](#usage)
 - [Credits](#credits)
-- [License](#license)
+- [Test](#test)
 - [Questions](#questions)
 
 ## Links
@@ -68,7 +68,7 @@ The following gif shows the web application's appearance and functionality:
 
 The user will be required to use the Inquirer package via NodeJS & NPM commands. The user will input the following in their command line to install the neccessary packages:
 
-```md
+```bash
 npm i
 ```
 
@@ -76,7 +76,7 @@ npm i
 
 The user will begin the process by invoking the application in NodeJS. The application will be invoked by using the following command:
 
-```md
+```bash
 node index.js
 ```
 
@@ -89,6 +89,14 @@ node index.js
 Once the user has inputted the information he wishes to have for each question, the HTML is generated in the "Dist" folder within the directory. Each employee's input is then rendered into cards for reference.
 
 ![alt text](images/capture4.png)
+
+## Tests
+
+Testing: run "npm run test" in your command line for testing. You will see functionality of the testing in the gif below. This application used four different tests to check for errors.
+
+[Jest](https://www.npmjs.com/package/jest) was used for unit testing.
+
+![.](./images/teamprofiletest.gif)
 
 ## Questions
 
