@@ -98,7 +98,7 @@ function init() {
             addIntern();
             break;
           default:
-            generateCards();
+            getCards();
         }
       });
   }
@@ -236,7 +236,7 @@ function init() {
       });
   }
 
-  function generateCards() {
+  function getCards() {
     let teamCards = "";
 
     teamArray.forEach((item) => {
@@ -249,8 +249,9 @@ function init() {
             <meta charset='UTF-8'>
             <meta http-equiv='X-UA-Compatible' content='IE=edge'>
             <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0' crossorigin='anonymous'>
-            <title>The 'Bee' Team</title>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css' rel='stylesheet' crossorigin='anonymous'>
+            <link rel="stylesheet" href="./Assets/style.css"/>
+            <title>The 'A' Team</title>
         </head>
         <body>
             <div class='container-fluid bg-success text-center d-flex align-items-center justify-content-center' style='height: 100px'>
