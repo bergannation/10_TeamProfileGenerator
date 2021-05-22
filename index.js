@@ -243,7 +243,7 @@ function init() {
       let teamCreation = item.getPerson();
       teamCards += teamCreation;
     });
-    let draftHTML = `<!DOCTYPE html>
+    let HTML = `<!DOCTYPE html>
     <html lang='en'>
         <head>
             <meta charset='UTF-8'>
@@ -253,7 +253,7 @@ function init() {
             <title>The 'Bee' Team</title>
         </head>
         <body>
-            <div class='container-fluid bg-success text-center d-flex align-items-center justify-content-center' style='height: 200px'>
+            <div class='container-fluid bg-success text-center d-flex align-items-center justify-content-center' style='height: 100px'>
                 <h1 class='text-center'>The 'A' Team</h1>
             </div>
             <div class='d-flex justify-content-center position-relative mt-5 bottom-0 start-50 translate-middle-x'>
@@ -268,7 +268,7 @@ function init() {
         </body>
     </html>
     `;
-    fs.writeFile("./dist/generateTeam.html", draftHTML, function (err) {
+    fs.writeFile("./dist/generateTeam.html", HTML, function (err) {
       if (err) {
         return console.log(err);
       }
